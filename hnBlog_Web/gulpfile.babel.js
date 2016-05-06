@@ -108,6 +108,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
+  gulp.watch('app/less/*.less',['less']);
 });
 
 gulp.task('serve:dist', () => {
@@ -160,11 +161,3 @@ gulp.task('less',()=>{
     .pipe(less())
     .pipe(gulp.dest('app/css'));
 })
-// 监听less文件的变化
-
-gulp.task('watch',()=>{
-  watch('app/less/*.less',()=>{
-    gulp.start('less')
-  })
-})
-

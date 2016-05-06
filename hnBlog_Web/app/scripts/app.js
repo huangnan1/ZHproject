@@ -21,15 +21,13 @@ angular.module('hnblog', ['ui.router'])
         $http.post(apiUrl + 'login', {
           'ume': this.userName,
           'pwd': this.passWord
-        }, {'Content-Type': 'application/json'}).success(function (data) {
-            if(data.code===0)
-            {
-              console.log(data);
-             // window.location='/';
-            }
+        }, { 'Content-Type': 'application/json' }).success(function (data) {
+          if (data.code === 0) {
+            console.log(data);
+          }
         });
       }
-    }
+    };
   }]).controller('blogIndex', ['$scope', function ($scope) {
     $scope.name = "黄楠";
   }]);
