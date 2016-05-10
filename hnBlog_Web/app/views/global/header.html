@@ -1,5 +1,20 @@
 <div class="header-wrap">
-    
-    
-    
+    <div class="container">
+        <div class="logo">
+            blog123
+        </div>
+        <ul class="pull-right menus">
+            <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="写博客"><span class="glyphicon glyphicon-pencil"></span></a></li>
+            <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="搜索"><span class="glyphicon glyphicon-search"></span></a></li>
+            <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="个人中心"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="javascript:;" data-toggle="tooltip" data-placement="bottom" title="退出"><span class="glyphicon glyphicon-off"></span></a></li>
+        </ul>
+    </div>
 </div>
+  <script>
+    $(function () { 
+      window.setTimeout(function(){
+     $("[data-toggle='tooltip']").tooltip();
+      },100);
+    });
+  </script>

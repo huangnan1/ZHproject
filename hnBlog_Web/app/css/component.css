@@ -1,6 +1,48 @@
+body {
+  font: 12px/1.5 Tahoma, Helvetica, Arial, '宋体', sans-serif;
+}
+div,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
 .header-wrap {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+.header-wrap .logo {
+  float: left;
   height: 70px;
-  background-color: #000;
+  line-height: 70px;
+  font-size: 20px;
+}
+.header-wrap .menus {
+  padding: 15px 0;
+}
+.header-wrap .menus a {
+  display: block;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 2px;
+  transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: background-color 0.5s;
+  /* Safari and Chrome */
+  -o-transition: background-color 0.5s;
+  /* Opera */
+}
+.header-wrap .menus a:hover {
+  background-color: red;
+}
+.header-wrap .menus li {
+  float: left;
+  margin-right: 10px;
 }
 .footer-wrap {
   text-align: center;
