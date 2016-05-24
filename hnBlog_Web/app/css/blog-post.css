@@ -18,3 +18,6 @@ nav {
 .form-control {
   margin: 15px 0;
 }
+.form-control textarea {
+  height: 400px;
+}

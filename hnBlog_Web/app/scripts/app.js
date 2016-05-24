@@ -1,24 +1,24 @@
-﻿var apiUrl = "http://localhost:3000/";
-angular.module('hnblog', ['ui.router'])
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-    $stateProvider.state('index', {
-      url: '/',
-      title: 'hn博客',
-      templateUrl: 'views/blog-list.html',
-      controller: 'blogIndex'
-    }).state('login', {
+﻿/// <reference path="../../typings/angularjs/angular.d.ts" />
+var app=angular.module('hnblog', ['ui.router']);
+
+  app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    // $urlRouterProvider.otherwise('/');
+    $stateProvider.state('login', {
       url: '/login',
       title: '登陆',
       templateUrl: 'views/login.html',
       controller: 'blogLogin'
     });
-  }]).controller('blogLogin', ['$scope', '$http', function ($scope, $http) {
+  }])
+  .run(['$rootScope', '$system', function ($rootScope, $system) {
+    $rootScope.$system = angular.extend($system);
+  }])
+  .controller('blogLogin', ['$scope', '$http', '$system', function ($scope, $http, $system) {
     $scope.loginModel = {
       userName: '',
       passWord: '',
       login: function () {
-        $http.post(apiUrl + 'login', {
+        $http.post($system.apiUrl + 'login', {
           'ume': this.userName,
           'pwd': this.passWord
         }, { 'Content-Type': 'application/json' }).success(function (data) {
@@ -28,6 +28,4 @@ angular.module('hnblog', ['ui.router'])
         });
       }
     };
-  }]).controller('blogIndex', ['$scope', function ($scope) {
-    $scope.name = "黄楠";
-  }]);
+  }])
